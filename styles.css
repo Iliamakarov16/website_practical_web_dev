@@ -1,11 +1,11 @@
 body {
     background-color: black;
-    background-repeat: repeat;
+    background-repeat:repeat;
     background-position: center;
     background-size: cover;
-
+    
 }
-h1, p {
+h1, h2, p {
     text-align: center;
     color: white;
     font-family: 'Orbitron', sans-serif;
@@ -14,7 +14,7 @@ h1, p {
 
 img {
     display: block;
-    max-width: 50%;
+    max-width: 100%;
     height: auto;
     margin: 1rem auto;
 }

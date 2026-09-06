@@ -9,6 +9,43 @@
 </head>
 <body>
     <h1>Solar system</h1>
-    <p>This website is about solar system</p>
-    <img src="image/Solar_system.jpg" alt="Solar system">
+    <p>Click anything in solar system to learn more about it</p>
+    <img src="image/Solar_system.png" alt="Map of the solar system" usemap="#solar-system" id="solar-system-img">
+
+<map name="solar-system" id="solar-system">
+    <area target="_self" alt="Sun" title="Sun" href="solar_system/sun.html" data-coords="1706,2096,1187" shape="circle">
+    <area target="_self" alt="Earth" title="Earth" href="solar_system/earth.html" data-coords="3610,1429,245" shape="circle">
+    <area target="_self" alt="Moon" title="Moon" href="solar_system/moon.html" data-coords="3948,1814,132" shape="circle">
+    <area target="_self" alt="Jupiter" title="Jupiter" href="solar_system/jupiter.html" data-coords="4863,1354,557" shape="circle">
+    <area target="_self" alt="Mercury" title="Mercury" href="solar_system/mercury.html" data-coords="3225,572,154" shape="circle">
+    <area target="_self" alt="Venus" title="Venus" href="solar_system/venus.html" data-coords="3948,733,220" shape="circle">
+    <area target="_self" alt="Mars" title="Mars" href="solar_system/mars.html" data-coords="3579,2600,199" shape="circle">
+    <area target="_self" alt="Saturn" title="Saturn" href="solar_system/saturn.html" data-coords="4767,2563,410" shape="circle">
+    <area target="_self" alt="Uranus" title="Uranus" href="solar_system/uranus.html" data-coords="3610,3399,312" shape="circle">
+    <area target="_self" alt="Neptune" title="Neptune" href="solar_system/neptune.html" data-coords="4639,3488,302" shape="circle">
+    <area target="_self" alt="Pluto" title="Pluto" href="solar_system/pluto.html" data-coords="5383,3296,110" shape="circle">
+</map>
+
+<script>
+    (function () {
+        var img = document.getElementById('solar-system-img');
+        var areas = document.querySelectorAll('map#solar-system area');
+
+        function scaleMap() {
+            if (!img.naturalWidth) return;
+            var scale = img.clientWidth / img.naturalWidth;
+            areas.forEach(function (area) {
+                var base = area.dataset.coords.split(',').map(Number);
+                area.coords = base.map(function (n) { return Math.round(n * scale); }).join(',');
+            });
+        }
+
+        if (img.complete) {
+            scaleMap();
+        } else {
+            img.addEventListener('load', scaleMap);
+        }
+        window.addEventListener('resize', scaleMap);
+    })();
+</script>
 </body>
