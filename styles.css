@@ -5,11 +5,67 @@ body {
     background-size: cover;
     
 }
-h1, h2, p {
+
+body > * {
+  opacity: 0;
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+body > *:nth-child(1) { animation-delay: 0.0s; }
+body > *:nth-child(2) { animation-delay: 0.30s; }
+body > *:nth-child(3) { animation-delay: 0.60s; }
+body > *:nth-child(4) { animation-delay: 0.90s; }
+body > *:nth-child(5) { animation-delay: 1.20s; }
+body > *:nth-child(6) { animation-delay: 1.50s; }
+body > *:nth-child(7) { animation-delay: 1.80s; }
+body > *:nth-child(8) { animation-delay: 2.10s; }
+body > *:nth-child(9) { animation-delay: 2.40s; }
+body > *:nth-child(10) { animation-delay: 2.70s; }
+body > *:nth-child(11) { animation-delay: 3.00s; }
+body > *:nth-child(12) { animation-delay: 3.30s; }
+body > *:nth-child(13) { animation-delay: 3.60s; }
+body > *:nth-child(14) { animation-delay: 3.90s; }
+body > *:nth-child(15) { animation-delay: 4.20s; }
+body > *:nth-child(16) { animation-delay: 4.50s; }
+body > *:nth-child(17) { animation-delay: 4.80s; }
+body > *:nth-child(18) { animation-delay: 5.10s; }
+body > *:nth-child(19) { animation-delay: 5.40s; }
+body > *:nth-child(20) { animation-delay: 5.70s; }
+body > *:nth-child(21) { animation-delay: 6.00s; }
+body > *:nth-child(22) { animation-delay: 6.30s; }
+body > *:nth-child(23) { animation-delay: 6.60s; }
+body > *:nth-child(24) { animation-delay: 6.90s; }
+
+h2, p {
     text-align: center;
     color: white;
     font-family: 'Orbitron', sans-serif;
     letter-spacing: 0.05em;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+button.top {
+    font-family: 'Orbitron', sans-serif;
+    padding: 3px 3px;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+button.bottom {
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    padding: 3px 3px;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 img {
@@ -19,12 +75,19 @@ img {
     margin: 1rem auto;
 }
 
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 img.planet {
     width: 626px;
     max-width: 100%;
     aspect-ratio: 1 / 1;
     height: auto;
     object-fit: contain;
+    opacity: 0;
+    animation: fade-in 1s ease-in forwards;
+
 }
 
 a {
