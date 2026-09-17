@@ -6,10 +6,11 @@
     <title>Sun</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="icon" type="image/x-icon" href="../image/favicon.ico">
+    <script src="../script/weight.js" defer></script>
 </head>
-<body>
+<body class="sun">
 
-<button class="top" onclick="location.href='../index.html'">Home</button>
+<button id="home-btn-top" onclick="location.href='../index.html'">Home</button>
 <img src="../image/animations/sun.webp" alt="The Sun" class="planet">
 <h1>The Sun</h1>
 <p>The Sun is the star at the center of our solar system. It is a nearly perfect sphere of hot plasma, made mostly of hydrogen and helium, and it generates energy through nuclear fusion in its core. Every other object in the solar system, from the smallest asteroid to the largest planet, orbits around it due to its immense gravitational pull.</p>
@@ -32,6 +33,20 @@
 <h2>The Future of the Sun</h2>
 <p>Scientists estimate the Sun is roughly halfway through its life cycle. In about 5 billion years, it is expected to exhaust the hydrogen fuel in its core and expand into a red giant, eventually shedding its outer layers and leaving behind a dense core known as a white dwarf.</p>
 
-<button class="bottom" onclick="location.href='../index.html'">Home</button>
+<div id="weight-calculator">
+    <label for="earthWeight">Enter your weight (kg)</label>
+    <input type="number" id="earthWeight">
+    <button id="calc-btn">Calculate</button>
+    <p id="result"></p>
+</div>
+<button id="home-btn-bottom" onclick="location.href='../index.html'">Home</button>
+<script>
+    document.getElementById('calc-btn').addEventListener('click', () => {
+        const earthWeight = parseFloat(document.getElementById('earthWeight').value);
+        const planet = document.body.className;
+        const result = planetWeight(earthWeight, planet);
+        document.getElementById('result').textContent = result === "Imposible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
+    });
+</script>
 </body>
 </html>

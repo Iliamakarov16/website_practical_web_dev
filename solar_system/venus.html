@@ -6,10 +6,11 @@
     <title>Venus</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="icon" type="image/x-icon" href="../image/favicon.ico">
+    <script src="../script/weight.js" defer></script>
 </head>
-<body>
+<body class="venus">
 
-<button class="top" onclick="location.href='../index.html'">Home</button>
+<button id="home-btn-top" onclick="location.href='../index.html'">Home</button>
 <img src="../image/animations/venus.webp" alt="Venus" class="planet">
 <h1>Venus</h1>
 <p>Venus is the second planet from the Sun and is often called Earth's "sister planet" due to their similar size and composition. Despite these similarities, Venus has evolved into a very different and hostile world.</p>
@@ -32,6 +33,20 @@
 <h2>Exploration</h2>
 <p>Venus has been explored by numerous missions, including the Soviet Venera probes, which were the first to land on another planet, and NASA's Magellan mission, which mapped its surface using radar. Several upcoming missions aim to study its atmosphere and geological history in greater detail.</p>
 
-<button class="bottom" onclick="location.href='../index.html'">Home</button>
+<div id="weight-calculator">
+    <label for="earthWeight">Enter your weight (kg)</label>
+    <input type="number" id="earthWeight">
+    <button id="calc-btn">Calculate</button>
+    <p id="result"></p>
+</div>
+<button id="home-btn-bottom" onclick="location.href='../index.html'">Home</button>
+<script>
+    document.getElementById('calc-btn').addEventListener('click', () => {
+        const earthWeight = parseFloat(document.getElementById('earthWeight').value);
+        const planet = document.body.className;
+        const result = planetWeight(earthWeight, planet);
+        document.getElementById('result').textContent = result === "Imposible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
+    });
+</script>
 </body>
 </html>

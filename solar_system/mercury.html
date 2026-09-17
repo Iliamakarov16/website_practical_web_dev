@@ -6,10 +6,11 @@
     <title>Mercury</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="icon" type="image/x-icon" href="../image/favicon.ico">
+    <script src="../script/weight.js" defer></script>
 </head>
-<body>
+<body class="mercury">
 
-<button class="top" onclick="location.href='../index.html'">Home</button>
+<button id="home-btn-top" onclick="location.href='../index.html'">Home</button>
 <img src="../image/animations/mercury.webp" alt="Mercury" class="planet">
 <h1>Mercury</h1>
 <p>Mercury is the smallest planet in the solar system and the closest to the Sun. It completes an orbit around the Sun in just 88 Earth days, making its year the shortest of any planet.</p>
@@ -32,6 +33,20 @@
 <h2>Exploration</h2>
 <p>Mercury has been visited by only two spacecraft: Mariner 10 in the 1970s and MESSENGER, which orbited the planet from 2011 to 2015 and mapped its surface in detail. The BepiColombo mission, a joint effort by the European and Japanese space agencies, is currently en route to study the planet further.</p>
 
-<button class="bottom" onclick="location.href='../index.html'">Home</button>
+<div id="weight-calculator">
+    <label for="earthWeight">Enter your weight (kg)</label>
+    <input type="number" id="earthWeight">
+    <button id="calc-btn">Calculate</button>
+    <p id="result"></p>
+</div>
+<button id="home-btn-bottom" onclick="location.href='../index.html'">Home</button>
+<script>
+    document.getElementById('calc-btn').addEventListener('click', () => {
+        const earthWeight = parseFloat(document.getElementById('earthWeight').value);
+        const planet = document.body.className;
+        const result = planetWeight(earthWeight, planet);
+        document.getElementById('result').textContent = result === "Imposible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
+    });
+</script>
 </body>
 </html>

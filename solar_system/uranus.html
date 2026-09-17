@@ -6,10 +6,11 @@
     <title>Uranus</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="icon" type="image/x-icon" href="../image/favicon.ico">
+    <script src="../script/weight.js" defer></script>
 </head>
-<body>
+<body class="uranus">
 
-<button class="top" onclick="location.href='../index.html'">Home</button>
+<button id="home-btn-top" onclick="location.href='../index.html'">Home</button>
 <img src="../image/animations/uranus.webp" alt="Uranus" class="planet">
 <h1>Uranus</h1>
 <p>Uranus is the seventh planet from the Sun and is classified as an ice giant, distinguished by its blue-green color caused by methane in its atmosphere. It is one of only two ice giants in the solar system, along with Neptune.</p>
@@ -32,6 +33,20 @@
 <h2>Exploration</h2>
 <p>Uranus has only been visited by one spacecraft, Voyager 2, which flew by in 1986 and provided most of what is currently known about the planet. No dedicated missions have been sent since, though future missions have been proposed to study it in greater detail.</p>
 
-<button class="bottom" onclick="location.href='../index.html'">Home</button>
+<div id="weight-calculator">
+    <label for="earthWeight">Enter your weight (kg)</label>
+    <input type="number" id="earthWeight">
+    <button id="calc-btn">Calculate</button>
+    <p id="result"></p>
+</div>
+<button id="home-btn-bottom" onclick="location.href='../index.html'">Home</button>
+<script>
+    document.getElementById('calc-btn').addEventListener('click', () => {
+        const earthWeight = parseFloat(document.getElementById('earthWeight').value);
+        const planet = document.body.className;
+        const result = planetWeight(earthWeight, planet);
+        document.getElementById('result').textContent = result === "Imposible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
+    });
+</script>
 </body>
 </html>

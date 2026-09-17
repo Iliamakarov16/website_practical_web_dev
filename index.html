@@ -9,7 +9,6 @@
 </head>
 <body>
     <h1>Solar system</h1>
-    <p>Click anything in solar system to learn more about it</p>
 
     <div class="solar-system">
 
@@ -74,16 +73,18 @@
         </div>
 
     </div>
-
+    <!-- fade in animation for all body -->
     <script>
         document.querySelectorAll('body > *').forEach((el, index) => {
             el.style.setProperty('--i', index);
         });
     </script>
     <button id="pause-btn">Pause/Start animation</button>
+    <!-- button script to pause orbit animation -->
     <script>
         document.getElementById('pause-btn').addEventListener('click', () => {
             document.querySelector('.solar-system').classList.toggle('paused');
         });
     </script>
+
 </body>

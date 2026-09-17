@@ -6,10 +6,11 @@
     <title>Moon</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="icon" type="image/x-icon" href="../image/favicon.ico">
+    <script src="../script/weight.js" defer></script>
 </head>
-<body>
+<body class="moon">
 
-<button class="top" onclick="location.href='../index.html'">Home</button>
+<button id="home-btn-top" onclick="location.href='../index.html'">Home</button>
 <img src="../image/animations/moon.webp" alt="The Moon" class="planet">
 <h1>The Moon</h1>
 <p>The Moon is Earth's only natural satellite and the fifth largest moon in the solar system. It has been an object of fascination and study throughout human history, inspiring myths, calendars, and scientific exploration.</p>
@@ -32,6 +33,20 @@
 <h2>Human Exploration</h2>
 <p>The Moon is the only celestial body beyond Earth that humans have visited in person, starting with the Apollo 11 mission in 1969. Since then, several missions have studied its surface and composition, and future missions aim to establish a longer-term human presence there.</p>
 
-<button class="bottom" onclick="location.href='../index.html'">Home</button>
+<div id="weight-calculator">
+    <label for="earthWeight">Enter your weight (kg)</label>
+    <input type="number" id="earthWeight">
+    <button id="calc-btn">Calculate</button>
+    <p id="result"></p>
+</div>
+<button id="home-btn-bottom" onclick="location.href='../index.html'">Home</button>
+<script>
+    document.getElementById('calc-btn').addEventListener('click', () => {
+        const earthWeight = parseFloat(document.getElementById('earthWeight').value);
+        const planet = document.body.className;
+        const result = planetWeight(earthWeight, planet);
+        document.getElementById('result').textContent = result === "Imposible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
+    });
+</script>
 </body>
 </html>

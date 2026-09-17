@@ -4,7 +4,6 @@ body {
     background-position: center;
     background-size: cover;   
     margin: 0;
-    overflow: hidden;
 }
 
 h2, p {
@@ -22,7 +21,13 @@ h1 {
     letter-spacing: 0.05em;
 }
 
-button.top {
+label {
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+#home-btn-top {
     font-family: 'Orbitron', sans-serif;
     padding: 3px 3px;
     font-size: 20px;
@@ -30,13 +35,21 @@ button.top {
     margin-left: 30px;
 }
 
-button.bottom {
+#home-btn-bottom {
     display: block;
     font-family: 'Orbitron', sans-serif;
     padding: 3px 3px;
     font-size: 20px;
     margin-left: auto;
     margin-right: auto;
+}
+
+#weight-calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 20px auto;
 }
 
 img {
@@ -64,6 +77,18 @@ a {
     font-family: 'Orbitron', sans-serif;
     text-decoration: none;
 }
+
+/* Per-planet text colors */
+body.sun h1, body.sun h2, body.sun p { color: #FDB813; }
+body.mercury h1, body.mercury h2, body.mercury p { color: #8C7853; }
+body.venus h1, body.venus h2, body.venus p { color: #E8CDA5; }
+body.earth h1, body.earth h2, body.earth p { color: #2f8bc1; }
+body.moon h1, body.moon h2, body.moon p { color: #B8B8B8; }
+body.mars h1, body.mars h2, body.mars p { color: #C1440E; }
+body.jupiter h1, body.jupiter h2, body.jupiter p { color: #D9A26C; }
+body.saturn h1, body.saturn h2, body.saturn p { color: #E3C16F; }
+body.uranus h1, body.uranus h2, body.uranus p { color: #AFDBF5; }
+body.neptune h1, body.neptune h2, body.neptune p { color: #3E54E8; }
 
 /*fade in animation for body*/
 body > * { /*selects direct child of body regardless of nametag */

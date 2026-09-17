@@ -6,10 +6,11 @@
     <title>Earth</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="icon" type="image/x-icon" href="../image/favicon.ico">
+    <script src="../script/weight.js" defer></script>
 </head>
-<body>
+<body class="earth">
 
-<button class="top" onclick="location.href='../index.html'">Home</button>
+<button id="home-btn-top" onclick="location.href='../index.html'">Home</button>
 <img src="../image/animations/earth.webp" alt="Earth" class="planet">
 <h1>Earth</h1>
 <p>Earth is the third planet from the Sun and the only known planet to support life. It is home to a wide variety of ecosystems and species, ranging from deep ocean trenches to towering mountain ranges.</p>
@@ -32,6 +33,20 @@
 <h2>Human History and Exploration</h2>
 <p>Earth is the only planet not named after a Greek or Roman deity, with its name derived from Old English and Germanic words meaning "ground" or "soil." Humans have explored much of the planet's surface and have also ventured into space to study Earth from orbit, gaining valuable insight into its climate and environment.</p>
 
-<button class="bottom" onclick="location.href='../index.html'">Home</button>
+<div id="weight-calculator">
+    <label for="earthWeight">Enter your weight (kg)</label>
+    <input type="number" id="earthWeight">
+    <button id="calc-btn">Calculate</button>
+    <p id="result"></p>
+</div>
+<button id="home-btn-bottom" onclick="location.href='../index.html'">Home</button>
+<script>
+    document.getElementById('calc-btn').addEventListener('click', () => {
+        const earthWeight = parseFloat(document.getElementById('earthWeight').value);
+        const planet = document.body.className;
+        const result = planetWeight(earthWeight, planet);
+        document.getElementById('result').textContent = result === "Imposible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
+    });
+</script>
 </body>
 </html>

@@ -6,10 +6,11 @@
     <title>Mars</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="icon" type="image/x-icon" href="../image/favicon.ico">
+    <script src="../script/weight.js" defer></script>
 </head>
-<body>
+<body class="mars">
 
-<button class="top" onclick="location.href='../index.html'">Home</button>
+<button id="home-btn-top" onclick="location.href='../index.html'">Home</button>
 <img src="../image/animations/mars.webp" alt="Mars" class="planet">
 <h1>Mars</h1>
 <p>Mars is the fourth planet from the Sun, often called the "Red Planet" due to its reddish appearance caused by iron oxide, or rust, on its surface. It is one of the most studied planets due to its potential for past or present life.</p>
@@ -32,6 +33,20 @@
 <h2>Exploration</h2>
 <p>Mars is a major target for space exploration, with numerous rovers and orbiters sent to study its geology, climate, and potential for past or present life. Missions such as Curiosity and Perseverance have searched for signs of ancient water and microbial life, and Mars remains a leading candidate for future human exploration.</p>
 
-<button class="bottom" onclick="location.href='../index.html'">Home</button>
+<div id="weight-calculator">
+    <label for="earthWeight">Enter your weight (kg)</label>
+    <input type="number" id="earthWeight">
+    <button id="calc-btn">Calculate</button>
+    <p id="result"></p>
+</div>
+<button id="home-btn-bottom" onclick="location.href='../index.html'">Home</button>
+<script>
+    document.getElementById('calc-btn').addEventListener('click', () => {
+        const earthWeight = parseFloat(document.getElementById('earthWeight').value);
+        const planet = document.body.className;
+        const result = planetWeight(earthWeight, planet);
+        document.getElementById('result').textContent = result === "Imposible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
+    });
+</script>
 </body>
 </html>

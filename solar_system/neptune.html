@@ -6,10 +6,11 @@
     <title>Neptune</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="icon" type="image/x-icon" href="../image/favicon.ico">
+    <script src="../script/weight.js" defer></script>
 </head>
-<body>
+<body class="neptune">
 
-<button class="top" onclick="location.href='../index.html'">Home</button>
+<button id="home-btn-top" onclick="location.href='../index.html'">Home</button>
 <img src="../image/animations/neptune.webp" alt="Neptune" class="planet">
 <h1>Neptune</h1>
 <p>Neptune is the eighth and farthest known planet from the Sun. It is an ice giant, similar in composition to Uranus, with a deep blue color caused by methane in its atmosphere.</p>
@@ -32,6 +33,20 @@
 <h2>Exploration</h2>
 <p>Neptune has only been visited by one spacecraft, Voyager 2, which flew by in 1989 and provided the first close-up images of the planet and its moons. No other missions have been sent to Neptune since, making it one of the least explored planets in the solar system.</p>
 
-<button class="bottom" onclick="location.href='../index.html'">Home</button>
+<div id="weight-calculator">
+    <label for="earthWeight">Enter your weight (kg)</label>
+    <input type="number" id="earthWeight">
+    <button id="calc-btn">Calculate</button>
+    <p id="result"></p>
+</div>
+<button id="home-btn-bottom" onclick="location.href='../index.html'">Home</button>
+<script>
+    document.getElementById('calc-btn').addEventListener('click', () => {
+        const earthWeight = parseFloat(document.getElementById('earthWeight').value);
+        const planet = document.body.className;
+        const result = planetWeight(earthWeight, planet);
+        document.getElementById('result').textContent = result === "Imposible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
+    });
+</script>
 </body>
 </html>
