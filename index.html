@@ -10,42 +10,80 @@
 <body>
     <h1>Solar system</h1>
     <p>Click anything in solar system to learn more about it</p>
-    <img src="image/solar_system.png" alt="Map of the solar system" usemap="#solar-system" id="solar-system-img">
 
-<map name="solar-system" id="solar-system">
-    <area target="_self" alt="Sun" title="Sun" href="solar_system/sun.html" data-coords="541,664,376" shape="circle">
-    <area target="_self" alt="Earth" title="Earth" href="solar_system/earth.html" data-coords="1144,453,78" shape="circle">
-    <area target="_self" alt="Moon" title="Moon" href="solar_system/moon.html" data-coords="1251,575,42" shape="circle">
-    <area target="_self" alt="Jupiter" title="Jupiter" href="solar_system/jupiter.html" data-coords="1541,429,176" shape="circle">
-    <area target="_self" alt="Mercury" title="Mercury" href="solar_system/mercury.html" data-coords="1022,181,49" shape="circle">
-    <area target="_self" alt="Venus" title="Venus" href="solar_system/venus.html" data-coords="1251,232,70" shape="circle">
-    <area target="_self" alt="Mars" title="Mars" href="solar_system/mars.html" data-coords="1134,824,63" shape="circle">
-    <area target="_self" alt="Saturn" title="Saturn" href="solar_system/saturn.html" data-coords="1510,812,130" shape="circle">
-    <area target="_self" alt="Uranus" title="Uranus" href="solar_system/uranus.html" data-coords="1144,1077,99" shape="circle">
-    <area target="_self" alt="Neptune" title="Neptune" href="solar_system/neptune.html" data-coords="1470,1105,96" shape="circle">
-    <area target="_self" alt="Pluto" title="Pluto" href="solar_system/pluto.html" data-coords="1706,1044,35" shape="circle">
-</map>
+    <div class="solar-system">
 
-<script>
-    (function () {
-        var img = document.getElementById('solar-system-img');
-        var areas = document.querySelectorAll('map#solar-system area');
+        <div class="sun">
+            <a href="solar_system\sun.html">
+                <img src="image\animations\sun.webp" alt="Sun" class="sun">
+            </a>
+        </div>
 
-        function scaleMap() {
-            if (!img.naturalWidth) return;
-            var scale = img.clientWidth / img.naturalWidth;
-            areas.forEach(function (area) {
-                var base = area.dataset.coords.split(',').map(Number);
-                area.coords = base.map(function (n) { return Math.round(n * scale); }).join(',');
-            });
-        }
+        <div class="orbit mercury-orbit">
+            <a href="solar_system\mercury.html">
+                <img src="image\animations\mercury.webp" alt="Sun" class="index-planet" height="30px" width="30px">        
+            </a>
+        </div>
 
-        if (img.complete) {
-            scaleMap();
-        } else {
-            img.addEventListener('load', scaleMap);
-        }
-        window.addEventListener('resize', scaleMap);
-    })();
-</script>
+        <div class="orbit venus-orbit">
+            <a href="solar_system\venus.html">
+                <img src="image\animations\venus.webp" alt="Venus" class="index-planet"  height="55px" width="55px">        
+            </a>
+        </div>
+
+        <div class="orbit earth-orbit">
+            <a href="href="solar_system\earth.html">
+                <img src="image\animations\earth.webp" alt="Earth" class="index-planet" height="55px" width="55px">        
+            </a>
+
+            <div class="orbit moon-orbit">
+                <a href="solar_system\moon.html">
+                    <img src="image\animations\moon.webp" alt="Moon" class="index-planet" height="30px" width="30px">
+                </a>
+            </div>
+        </div>
+        
+        <div class="orbit mars-orbit">
+            <a href="solar_system\mars.html">
+                <img src="image\animations\mars.webp" alt="Mars" class="index-planet" height="55px" width="55px">        
+            </a>
+        </div>
+
+        <div class="orbit jupiter-orbit">
+            <a href="solar_system\jupiter.html">
+                <img src="image\animations\jupiter.webp" alt="Jupiter" class="index-planet" height="55px" width="55px">        
+            </a>
+        </div>
+
+        <div class="orbit saturn-orbit">
+            <a href="solar_system\saturn.html">
+                <img src="image\animations\saturn.webp" alt="Saturn" class="index-planet" height="55px" width="55px">        
+            </a>
+        </div>
+
+        <div class="orbit uranus-orbit">
+            <a href="solar_system\uranus.html">
+                <img src="image\animations\uranus.webp" alt="Uranus" class="index-planet" height="55px" width="55px">        
+            </a>
+        </div>
+
+        <div class="orbit neptune-orbit">
+            <a href="solar_system\neptune.html">
+                <img src="image\animations\neptune.webp" alt="Neptune" class="index-planet" height="55px" width="55px">
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        document.querySelectorAll('body > *').forEach((el, index) => {
+            el.style.setProperty('--i', index);
+        });
+    </script>
+    <button id="pause-btn">Pause/Start animation</button>
+    <script>
+        document.getElementById('pause-btn').addEventListener('click', () => {
+            document.querySelector('.solar-system').classList.toggle('paused');
+        });
+    </script>
 </body>

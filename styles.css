@@ -2,39 +2,10 @@ body {
     background-color: black;
     background-repeat:repeat;
     background-position: center;
-    background-size: cover;
-    
+    background-size: cover;   
+    margin: 0;
+    overflow: hidden;
 }
-
-body > * {
-  opacity: 0;
-  animation: fade-in 0.8s ease-out forwards;
-}
-
-body > *:nth-child(1) { animation-delay: 0.0s; }
-body > *:nth-child(2) { animation-delay: 0.30s; }
-body > *:nth-child(3) { animation-delay: 0.60s; }
-body > *:nth-child(4) { animation-delay: 0.90s; }
-body > *:nth-child(5) { animation-delay: 1.20s; }
-body > *:nth-child(6) { animation-delay: 1.50s; }
-body > *:nth-child(7) { animation-delay: 1.80s; }
-body > *:nth-child(8) { animation-delay: 2.10s; }
-body > *:nth-child(9) { animation-delay: 2.40s; }
-body > *:nth-child(10) { animation-delay: 2.70s; }
-body > *:nth-child(11) { animation-delay: 3.00s; }
-body > *:nth-child(12) { animation-delay: 3.30s; }
-body > *:nth-child(13) { animation-delay: 3.60s; }
-body > *:nth-child(14) { animation-delay: 3.90s; }
-body > *:nth-child(15) { animation-delay: 4.20s; }
-body > *:nth-child(16) { animation-delay: 4.50s; }
-body > *:nth-child(17) { animation-delay: 4.80s; }
-body > *:nth-child(18) { animation-delay: 5.10s; }
-body > *:nth-child(19) { animation-delay: 5.40s; }
-body > *:nth-child(20) { animation-delay: 5.70s; }
-body > *:nth-child(21) { animation-delay: 6.00s; }
-body > *:nth-child(22) { animation-delay: 6.30s; }
-body > *:nth-child(23) { animation-delay: 6.60s; }
-body > *:nth-child(24) { animation-delay: 6.90s; }
 
 h2, p {
     text-align: center;
@@ -75,10 +46,7 @@ img {
     margin: 1rem auto;
 }
 
-@keyframes fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
+
 img.planet {
     width: 626px;
     max-width: 100%;
@@ -95,4 +63,200 @@ a {
     color: white;
     font-family: 'Orbitron', sans-serif;
     text-decoration: none;
+}
+
+/*fade in animation for body*/
+body > * { /*selects direct child of body regardless of nametag */
+  opacity: 0;
+  animation: fade-in 0.8s ease-out forwards;
+  animation-delay: calc(var(--i) * 0.3s);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes orbit {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.paused .orbit {
+    animation-play-state: paused;
+}
+
+/* The area containing the whole solar system */
+.solar-system {
+    width: 800px;
+    height: 800px;
+    position: relative;
+    margin: auto;
+    top: 50px;
+
+}
+
+/* The Sun */
+img.sun{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Each orbit is a circle */
+.orbit {
+    position: absolute;
+    border: 1px solid gray;
+    border-radius: 50%; 
+    pointer-events: none;
+}
+
+.index-planet {
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: auto;
+}
+
+/* Mercury's orbit */
+.mercury-orbit {
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    animation: orbit 4s linear infinite;
+}
+
+/* Venus' orbit */
+.venus-orbit {
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    animation: orbit 7s linear infinite;
+}
+
+/* Earth's orbit */
+.earth-orbit {
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: orbit 10s linear infinite;
+}
+
+.moon-orbit {
+    width: 80px;
+    height: 80px;
+    top: 00;
+    left: 46%;
+    transform: translate(-50%, -50%);
+    animation: orbit 3s linear infinite;
+}
+
+
+/* Mars' orbit */
+.mars-orbit {
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    animation: orbit 15s linear infinite;
+}
+
+/* Jupiter's orbit */
+.jupiter-orbit {
+    width: 600px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    animation: orbit 25s linear infinite;
+}
+
+/* Saturn's orbit */
+.saturn-orbit {
+    width: 700px;
+    height: 700px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    animation: orbit 35s linear infinite;
+}
+
+.uranus-orbit {
+    width: 800px;
+    height: 800px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    animation: orbit 15s linear infinite;
+}
+
+.neptune-orbit {
+    width: 900px;
+    height: 900px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    animation: orbit 15s linear infinite;
+}
+/* Per-planet nudges: tune the px offset while watching in the browser
+   so the visible planet (not just the img box) sits on the ring. */
+.mercury-orbit img.index-planet {
+    transform: translate(-50%, -50%) translate(-15px, -15px);
+}
+
+.venus-orbit img.index-planet {
+    transform: translate(-50%, -50%) translate(-10px, -10px);
+}
+
+.earth-orbit img.index-planet {
+    transform: translate(-50%, -50%) translate(-15px, -15px);
+}
+
+.moon-orbit img.index-planet {
+    transform: translate(-50%, -50%) translate(-15px, -15px);
+}
+
+.mars-orbit img.index-planet {
+    transform: translate(-50%, -50%) translate(-15px, -15px);
+}
+
+.jupiter-orbit img.index-planet {
+    transform: translate(-50%, -50%) translate(-15px, -15px);
+}
+
+.saturn-orbit img.index-planet {
+    transform: translate(-50%, -50%) translate(-15px, -15px);
+}
+
+.uranus-orbit img.index-planet {
+    transform: translate(-50%, -50%) translate(-15px, -15px);
+}
+
+.neptune-orbit img.index-planet {
+    transform: translate(-50%, -50%) translate(-15px, -15px);
 }
