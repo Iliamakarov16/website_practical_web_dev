@@ -10,43 +10,50 @@
 </head>
 <body class="neptune">
 
-<button id="home-btn-top" onclick="location.href='../index.html'">Home</button>
-<img src="../image/animations/neptune.webp" alt="Neptune" class="planet">
-<h1>Neptune</h1>
-<p>Neptune is the eighth and farthest known planet from the Sun. It is an ice giant, similar in composition to Uranus, with a deep blue color caused by methane in its atmosphere.</p>
+    <button id="home-btn-top" onclick="location.href='../index.html'">Home</button>
+    <img src="../image/animations/neptune.webp" alt="Neptune" class="planet">
+    <h1>Neptune</h1>
+    <p>Neptune is the eighth and farthest known planet from the Sun. It is an ice giant, similar in composition to Uranus, with a deep blue color caused by methane in its atmosphere.</p>
 
-<h2>Discovery</h2>
-<p>Neptune was discovered in 1846 and was the first planet located through mathematical prediction rather than direct observation, after astronomers noticed irregularities in the orbit of Uranus that suggested the presence of another planet. It was named after the Roman god of the sea.</p>
+    <h2>Discovery</h2>
+    <p>Neptune was discovered in 1846 and was the first planet located through mathematical prediction rather than direct observation, after astronomers noticed irregularities in the orbit of Uranus that suggested the presence of another planet. It was named after the Roman god of the sea.</p>
 
-<h2>Size and Distance</h2>
-<p>Neptune has a diameter of about 49,244 kilometers, slightly smaller than Uranus. It orbits the Sun at an average distance of about 4.5 billion kilometers, taking about 165 Earth years to complete a single orbit.</p>
+    <h2>Size and Distance</h2>
+    <p>Neptune has a diameter of about 49,244 kilometers, slightly smaller than Uranus. It orbits the Sun at an average distance of about 4.5 billion kilometers, taking about 165 Earth years to complete a single orbit.</p>
 
-<h2>Atmosphere and Weather</h2>
-<p>Neptune has the strongest winds in the solar system, reaching speeds of up to 2,100 kilometers per hour. It also has large storm systems, including a feature known as the Great Dark Spot, a massive storm observed by Voyager 2 in 1989.</p>
+    <h2>Atmosphere and Weather</h2>
+    <p>Neptune has the strongest winds in the solar system, reaching speeds of up to 2,100 kilometers per hour. It also has large storm systems, including a feature known as the Great Dark Spot, a massive storm observed by Voyager 2 in 1989.</p>
 
-<h2>Composition and Structure</h2>
-<p>Like Uranus, Neptune is composed of hydrogen, helium, and methane in its atmosphere, with a mantle of water, ammonia, and methane ices surrounding a rocky core. Its internal heat source causes it to radiate more energy than it receives from the Sun.</p>
+    <h2>Composition and Structure</h2>
+    <p>Like Uranus, Neptune is composed of hydrogen, helium, and methane in its atmosphere, with a mantle of water, ammonia, and methane ices surrounding a rocky core. Its internal heat source causes it to radiate more energy than it receives from the Sun.</p>
 
-<h2>Moons</h2>
-<p>Neptune has 16 known moons, the largest being Triton, which orbits in the opposite direction to the planet's rotation. This unusual orbit suggests that Triton may have been a captured object from the Kuiper Belt rather than forming alongside Neptune.</p>
+    <h2>Moons</h2>
+    <p>Neptune has 16 known moons, the largest being Triton, which orbits in the opposite direction to the planet's rotation. This unusual orbit suggests that Triton may have been a captured object from the Kuiper Belt rather than forming alongside Neptune.</p>
 
-<h2>Exploration</h2>
-<p>Neptune has only been visited by one spacecraft, Voyager 2, which flew by in 1989 and provided the first close-up images of the planet and its moons. No other missions have been sent to Neptune since, making it one of the least explored planets in the solar system.</p>
+    <h2>Exploration</h2>
+    <p>Neptune has only been visited by one spacecraft, Voyager 2, which flew by in 1989 and provided the first close-up images of the planet and its moons. No other missions have been sent to Neptune since, making it one of the least explored planets in the solar system.</p>
 
-<div id="weight-calculator">
-    <label for="earthWeight">Enter your weight (kg)</label>
-    <input type="number" id="earthWeight">
-    <button id="calc-btn">Calculate</button>
-    <p id="result"></p>
-</div>
-<button id="home-btn-bottom" onclick="location.href='../index.html'">Home</button>
-<script>
-    document.getElementById('calc-btn').addEventListener('click', () => {
-        const earthWeight = parseFloat(document.getElementById('earthWeight').value);
-        const planet = document.body.className;
-        const result = planetWeight(earthWeight, planet);
-        document.getElementById('result').textContent = result === "Imposible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
-    });
-</script>
+    <div id="weight-calculator">
+        <label for="earthWeight">Enter your weight (kg)</label>
+        <input type="number" id="earthWeight">
+        <button id="calc-btn">Calculate</button>
+        <p id="result"></p>
+    </div>
+    <button id="home-btn-bottom" onclick="location.href='../index.html'">Home</button>
+    <script>
+        document.getElementById('calc-btn').addEventListener('click', () => {
+            const earthWeight = parseFloat(document.getElementById('earthWeight').value);
+            const planet = document.body.className;
+            const result = planetWeight(earthWeight, planet);
+            document.getElementById('result').textContent = result === "Imposible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('body > *').forEach((el, index) => {
+                el.style.setProperty('--i', index);
+            });
+        });
+    </script>
 </body>
 </html>

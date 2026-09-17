@@ -52,6 +52,15 @@ label {
     margin: 20px auto;
 }
 
+#pause-btn{
+    position: fixed;
+    top: 120px;
+    right: 150px;
+    font-family: 'Orbitron', sans-serif;
+    padding: 3px 3px;
+    font-size: 20px;
+}
+
 img {
     display: block;
     max-width: 100%;
@@ -79,27 +88,29 @@ a {
 }
 
 /* Per-planet text colors */
-body.sun h1, body.sun h2, body.sun p { color: #FDB813; }
-body.mercury h1, body.mercury h2, body.mercury p { color: #8C7853; }
-body.venus h1, body.venus h2, body.venus p { color: #E8CDA5; }
-body.earth h1, body.earth h2, body.earth p { color: #2f8bc1; }
-body.moon h1, body.moon h2, body.moon p { color: #B8B8B8; }
-body.mars h1, body.mars h2, body.mars p { color: #C1440E; }
-body.jupiter h1, body.jupiter h2, body.jupiter p { color: #D9A26C; }
-body.saturn h1, body.saturn h2, body.saturn p { color: #E3C16F; }
-body.uranus h1, body.uranus h2, body.uranus p { color: #AFDBF5; }
-body.neptune h1, body.neptune h2, body.neptune p { color: #3E54E8; }
+body.sun h1, body.sun h2, body.sun p, body.sun label { color: #FDB813; }
+body.mercury h1, body.mercury h2, body.mercury p, body.mercury label { color: #e2c58e; }
+body.venus h1, body.venus h2, body.venus p, body.venus label { color: #E8CDA5; }
+body.earth h1, body.earth h2, body.earth p, body.earth label { color: #2f8bc1; }
+body.moon h1, body.moon h2, body.moon p, body.moon label { color: #B8B8B8; }
+body.mars h1, body.mars h2, body.mars p, body.mars label { color: #C1440E; }
+body.jupiter h1, body.jupiter h2, body.jupiter p, body.jupiter label { color: #D9A26C; }
+body.saturn h1, body.saturn h2, body.saturn p, body.saturn label { color: #e3cfa0; }
+body.uranus h1, body.uranus h2, body.uranus p, body.uranus label { color: #AFDBF5; }
+body.neptune h1, body.neptune h2, body.neptune p, body.neptune label { color: #3E54E8; }
 
-/*fade in animation for body*/
-body > * { /*selects direct child of body regardless of nametag */
+/*fade in animation for planet body*/
+body.sun > *, body.mercury > *, body.venus > *, body.earth > *,
+body.moon > *, body.mars > *, body.jupiter > *, body.saturn > *,
+body.uranus > *, body.neptune > * { /*selects direct child of body regardless of nametag */
   opacity: 0;
   animation: fade-in 0.8s ease-out forwards;
   animation-delay: calc(var(--i) * 0.3s);
 }
 
 @keyframes fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {transform: translateY(-30px); opacity: 0; }
+  to   {transform: translateY(0); opacity: 1; }
 }
 
 @keyframes orbit {
@@ -122,7 +133,7 @@ body > * { /*selects direct child of body regardless of nametag */
     height: 800px;
     position: relative;
     margin: auto;
-    top: 50px;
+    top: 70px;
 
 }
 
@@ -136,8 +147,11 @@ img.sun{
     top: 48%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: 0.2s ease;
 }
-
+img.sun:hover{
+    transform: translate(-50%, -50%) scale(1.3);
+}
 /* Each orbit is a circle */
 .orbit {
     position: absolute;
@@ -152,6 +166,10 @@ img.sun{
     left: 50%;
     transform: translate(-50%, -50%);
     pointer-events: auto;
+}
+
+img.index-planet{
+    transition: 0.2s ease;
 }
 
 /* Mercury's orbit */
@@ -192,7 +210,7 @@ img.sun{
     top: 00;
     left: 46%;
     transform: translate(-50%, -50%);
-    animation: orbit 3s linear infinite;
+    animation: orbit 2s linear infinite;
 }
 
 
@@ -215,7 +233,7 @@ img.sun{
     left: 50%;
     transform: translate(-50%, -50%);
 
-    animation: orbit 25s linear infinite;
+    animation: orbit 20s linear infinite;
 }
 
 /* Saturn's orbit */
@@ -226,7 +244,7 @@ img.sun{
     left: 50%;
     transform: translate(-50%, -50%);
 
-    animation: orbit 35s linear infinite;
+    animation: orbit 30s linear infinite;
 }
 
 .uranus-orbit {
@@ -236,7 +254,7 @@ img.sun{
     left: 50%;
     transform: translate(-50%, -50%);
 
-    animation: orbit 15s linear infinite;
+    animation: orbit 40s linear infinite;
 }
 
 .neptune-orbit {
@@ -246,7 +264,7 @@ img.sun{
     left: 50%;
     transform: translate(-50%, -50%);
 
-    animation: orbit 15s linear infinite;
+    animation: orbit 50s linear infinite;
 }
 /* Per-planet nudges: tune the px offset while watching in the browser
    so the visible planet (not just the img box) sits on the ring. */
@@ -254,34 +272,70 @@ img.sun{
     transform: translate(-50%, -50%) translate(-15px, -15px);
 }
 
+.mercury-orbit img.index-planet:hover {
+    transform: translate(-50%, -50%) translate(-15px, -15px) scale(1.7);
+}
+
 .venus-orbit img.index-planet {
     transform: translate(-50%, -50%) translate(-10px, -10px);
+}
+
+.venus-orbit img.index-planet:hover {
+    transform: translate(-50%, -50%) translate(-10px, -10px) scale(1.7);
 }
 
 .earth-orbit img.index-planet {
     transform: translate(-50%, -50%) translate(-15px, -15px);
 }
 
+.earth-orbit img.index-planet:hover {
+    transform: translate(-50%, -50%) translate(-15px, -15px) scale(1.7);
+}
+
 .moon-orbit img.index-planet {
     transform: translate(-50%, -50%) translate(-15px, -15px);
+}
+
+.moon-orbit img.index-planet:hover {
+    transform: translate(-50%, -50%) translate(-15px, -15px) scale(1.7);
 }
 
 .mars-orbit img.index-planet {
     transform: translate(-50%, -50%) translate(-15px, -15px);
 }
 
+.mars-orbit img.index-planet:hover {
+    transform: translate(-50%, -50%) translate(-15px, -15px) scale(1.7);
+}
+
 .jupiter-orbit img.index-planet {
     transform: translate(-50%, -50%) translate(-15px, -15px);
+}
+
+.jupiter-orbit img.index-planet:hover {
+    transform: translate(-50%, -50%) translate(-15px, -15px) scale(1.7);
 }
 
 .saturn-orbit img.index-planet {
     transform: translate(-50%, -50%) translate(-15px, -15px);
 }
 
+.saturn-orbit img.index-planet:hover {
+    transform: translate(-50%, -50%) translate(-15px, -15px) scale(1.7);
+}
+
 .uranus-orbit img.index-planet {
     transform: translate(-50%, -50%) translate(-15px, -15px);
 }
 
+.uranus-orbit img.index-planet:hover {
+    transform: translate(-50%, -50%) translate(-15px, -15px) scale(1.7);
+}
+
 .neptune-orbit img.index-planet {
     transform: translate(-50%, -50%) translate(-15px, -15px);
+}
+
+.neptune-orbit img.index-planet:hover {
+    transform: translate(-50%, -50%) translate(-15px, -15px) scale(1.7);
 }

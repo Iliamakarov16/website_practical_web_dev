@@ -10,43 +10,50 @@
 </head>
 <body class="jupiter">
 
-<button id="home-btn-top" onclick="location.href='../index.html'">Home</button>
-<img src="../image/animations/jupiter.webp" alt="Jupiter" class="planet">
-<h1>Jupiter</h1>
-<p>Jupiter is the fifth planet from the Sun and the largest planet in the solar system. It is a gas giant composed mainly of hydrogen and helium, and it has a mass more than twice that of all the other planets combined.</p>
+    <button id="home-btn-top" onclick="location.href='../index.html'">Home</button>
+    <img src="../image/animations/jupiter.webp" alt="Jupiter" class="planet">
+    <h1>Jupiter</h1>
+    <p>Jupiter is the fifth planet from the Sun and the largest planet in the solar system. It is a gas giant composed mainly of hydrogen and helium, and it has a mass more than twice that of all the other planets combined.</p>
 
-<h2>Size and Distance</h2>
-<p>Jupiter has a diameter of about 139,820 kilometers, more than 11 times the diameter of Earth. It orbits the Sun at an average distance of about 778 million kilometers, taking almost 12 Earth years to complete one orbit.</p>
+    <h2>Size and Distance</h2>
+    <p>Jupiter has a diameter of about 139,820 kilometers, more than 11 times the diameter of Earth. It orbits the Sun at an average distance of about 778 million kilometers, taking almost 12 Earth years to complete one orbit.</p>
 
-<h2>Composition and Structure</h2>
-<p>Jupiter does not have a solid surface like Earth. Instead, it is composed primarily of hydrogen and helium gas that gradually transitions into liquid and metallic forms deeper within the planet, surrounding a possible dense core of rock and ice.</p>
+    <h2>Composition and Structure</h2>
+    <p>Jupiter does not have a solid surface like Earth. Instead, it is composed primarily of hydrogen and helium gas that gradually transitions into liquid and metallic forms deeper within the planet, surrounding a possible dense core of rock and ice.</p>
 
-<h2>Atmosphere and the Great Red Spot</h2>
-<p>Jupiter is known for its distinctive banded clouds, caused by strong winds and differences in temperature and composition. Its most famous feature is the Great Red Spot, a giant storm that has raged for hundreds of years and is larger than Earth.</p>
+    <h2>Atmosphere and the Great Red Spot</h2>
+    <p>Jupiter is known for its distinctive banded clouds, caused by strong winds and differences in temperature and composition. Its most famous feature is the Great Red Spot, a giant storm that has raged for hundreds of years and is larger than Earth.</p>
 
-<h2>Moons</h2>
-<p>Jupiter has at least 95 known moons, including the four large Galilean moons: Io, Europa, Ganymede, and Callisto. Europa is of particular interest to scientists because it may have a subsurface ocean that could potentially support life.</p>
+    <h2>Moons</h2>
+    <p>Jupiter has at least 95 known moons, including the four large Galilean moons: Io, Europa, Ganymede, and Callisto. Europa is of particular interest to scientists because it may have a subsurface ocean that could potentially support life.</p>
 
-<h2>Rings</h2>
-<p>Jupiter has a faint ring system, much less prominent than Saturn's, made up of small, dark particles of dust. These rings were discovered by the Voyager 1 spacecraft in 1979 and are difficult to observe from Earth.</p>
+    <h2>Rings</h2>
+    <p>Jupiter has a faint ring system, much less prominent than Saturn's, made up of small, dark particles of dust. These rings were discovered by the Voyager 1 spacecraft in 1979 and are difficult to observe from Earth.</p>
 
-<h2>Exploration</h2>
-<p>Jupiter has been visited by several spacecraft, including Pioneer, Voyager, Galileo, and Juno, which have studied its atmosphere, magnetic field, and moons in detail. Future missions aim to explore its icy moons for signs of habitability.</p>
+    <h2>Exploration</h2>
+    <p>Jupiter has been visited by several spacecraft, including Pioneer, Voyager, Galileo, and Juno, which have studied its atmosphere, magnetic field, and moons in detail. Future missions aim to explore its icy moons for signs of habitability.</p>
 
-<div id="weight-calculator">
-    <label for="earthWeight">Enter your weight (kg)</label>
-    <input type="number" id="earthWeight">
-    <button id="calc-btn">Calculate</button>
-    <p id="result"></p>
-</div>
-<button id="home-btn-bottom" onclick="location.href='../index.html'">Home</button>
-<script>
-    document.getElementById('calc-btn').addEventListener('click', () => {
-        const earthWeight = parseFloat(document.getElementById('earthWeight').value);
-        const planet = document.body.className;
-        const result = planetWeight(earthWeight, planet);
-        document.getElementById('result').textContent = result === "Imposible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
-    });
-</script>
+    <div id="weight-calculator">
+        <label for="earthWeight">Enter your weight (kg)</label>
+        <input type="number" id="earthWeight">
+        <button id="calc-btn">Calculate</button>
+        <p id="result"></p>
+    </div>
+    <button id="home-btn-bottom" onclick="location.href='../index.html'">Home</button>
+    <script>
+        document.getElementById('calc-btn').addEventListener('click', () => {
+            const earthWeight = parseFloat(document.getElementById('earthWeight').value);
+            const planet = document.body.className;
+            const result = planetWeight(earthWeight, planet);
+            document.getElementById('result').textContent = result === "Imposible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('body > *').forEach((el, index) => {
+                el.style.setProperty('--i', index);
+            });
+        });
+    </script>
 </body>
 </html>
