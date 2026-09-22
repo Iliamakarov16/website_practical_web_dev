@@ -6,7 +6,7 @@ body {
     margin: 0;
 }
 
-h2, p {
+h2, h3, p {
     text-align: center;
     color: white;
     font-family: 'Orbitron', sans-serif;
@@ -88,16 +88,16 @@ a {
 }
 
 /* Per-planet text colors */
-body.sun h1, body.sun h2, body.sun p, body.sun label { color: #FDB813; }
-body.mercury h1, body.mercury h2, body.mercury p, body.mercury label { color: #e2c58e; }
-body.venus h1, body.venus h2, body.venus p, body.venus label { color: #E8CDA5; }
-body.earth h1, body.earth h2, body.earth p, body.earth label { color: #2f8bc1; }
-body.moon h1, body.moon h2, body.moon p, body.moon label { color: #B8B8B8; }
-body.mars h1, body.mars h2, body.mars p, body.mars label { color: #C1440E; }
-body.jupiter h1, body.jupiter h2, body.jupiter p, body.jupiter label { color: #D9A26C; }
-body.saturn h1, body.saturn h2, body.saturn p, body.saturn label { color: #e3cfa0; }
-body.uranus h1, body.uranus h2, body.uranus p, body.uranus label { color: #AFDBF5; }
-body.neptune h1, body.neptune h2, body.neptune p, body.neptune label { color: #3E54E8; }
+body.sun h1, body.sun h2, body.sun h3, body.sun p, body.sun label { color: #FDB813; }
+body.mercury h1, body.mercury h2, body.mercury h3, body.mercury p, body.mercury label { color: #e2c58e; }
+body.venus h1, body.venus h2, body.venus h3, body.venus p, body.venus label { color: #E8CDA5; }
+body.earth h1, body.earth h2, body.earth h3, body.earth p, body.earth label { color: #2f8bc1; }
+body.moon h1, body.moon h2, body.moon h3, body.moon p, body.moon label { color: #B8B8B8; }
+body.mars h1, body.mars h2, body.mars h3, body.mars p, body.mars label { color: #C1440E; }
+body.jupiter h1, body.jupiter h2, body.jupiter h3, body.jupiter p, body.jupiter label { color: #D9A26C; }
+body.saturn h1, body.saturn h2, body.saturn h3, body.saturn p, body.saturn label { color: #e3cfa0; }
+body.uranus h1, body.uranus h2, body.uranus h3, body.uranus p, body.uranus label { color: #AFDBF5; }
+body.neptune h1, body.neptune h2, body.neptune h3, body.neptune p, body.neptune label { color: #3E54E8; }
 
 /*fade in animation for planet body*/
 body.sun > *, body.mercury > *, body.venus > *, body.earth > *,
