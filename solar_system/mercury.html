@@ -33,8 +33,18 @@
     <h2>Exploration</h2>
     <p>Mercury has been visited by only two spacecraft: Mariner 10 in the 1970s and MESSENGER, which orbited the planet from 2011 to 2015 and mapped its surface in detail. The BepiColombo mission, a joint effort by the European and Japanese space agencies, is currently en route to study the planet further.</p>
 
+    <h2>Fun Facts</h2>
+    <ul class="fun-facts">
+        <li>Even though it is closest to the Sun, Mercury is not the hottest planet. Venus is hotter because its thick atmosphere traps heat.</li>
+        <li>There is water ice on Mercury, hidden in permanently shadowed craters near its poles where sunlight never reaches.</li>
+        <li>Mercury is shrinking. As its iron core cools, the planet has contracted, and its radius has decreased by up to about 7 kilometers.</li>
+        <li>Mercury has no moons and no rings. Venus is the only other planet with neither.</li>
+        <li>On average, Mercury is the closest planet to Earth, and to every other planet, because it never strays far from the Sun.</li>
+    </ul>
+
     <div id="weight-calculator">
         <h3>Mercury weight calculator</h3>
+        <img src="../image/mercury.png" alt="Mercury" height="300px" width="300px">
         <label for="earthWeight">Enter your weight (kg)</label>
         <input type="number" id="earthWeight">
         <button id="calc-btn">Calculate</button>
@@ -46,7 +56,7 @@
             const earthWeight = parseFloat(document.getElementById('earthWeight').value);
             const planet = document.body.className;
             const result = planetWeight(earthWeight, planet);
-            document.getElementById('result').textContent = result === "Imposible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
+            document.getElementById('result').textContent = result === "Impossible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
         });
     </script>
     <script>

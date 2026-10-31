@@ -25,7 +25,7 @@
     <p>Saturn's rings are made up of countless particles of ice and rock, ranging in size from tiny grains to large chunks several meters across. The rings extend up to 282,000 kilometers from the planet but are remarkably thin, often only about 10 meters thick.</p>
 
     <h2>Moons</h2>
-    <p>Saturn has at least 146 known moons, the largest being Titan, which has a thick atmosphere and liquid methane lakes on its surface. Another moon, Enceladus, has geysers that erupt from a subsurface ocean, making it a target for the search for life.</p>
+    <p>Saturn has 274 known moons, more than any other planet, the largest being Titan, which has a thick atmosphere and liquid methane lakes on its surface. Another moon, Enceladus, has geysers that erupt from a subsurface ocean, making it a target for the search for life.</p>
 
     <h2>Atmosphere and Weather</h2>
     <p>Saturn's atmosphere features strong winds and storms, including a unique hexagonal-shaped jet stream at its north pole. Its pale golden color comes from ammonia crystals in its upper atmosphere.</p>
@@ -33,8 +33,18 @@
     <h2>Exploration</h2>
     <p>Saturn has been visited by several spacecraft, including Pioneer 11, Voyager 1 and 2, and the Cassini-Huygens mission, which spent 13 years studying the planet, its rings, and its moons before deliberately plunging into Saturn's atmosphere in 2017.</p>
 
+    <h2>Fun Facts</h2>
+    <ul class="fun-facts">
+        <li>Saturn has more known moons than any other planet, 274 as of 2025, after astronomers announced 128 new ones at once.</li>
+        <li>Saturn is the flattest planet. It spins so fast that it is about 10% wider at its equator than from pole to pole.</li>
+        <li>A day on Saturn lasts about 10 hours and 33 minutes. Scientists worked this out in 2019 by studying waves in its rings.</li>
+        <li>In 2005 the Huygens probe landed on Saturn's moon Titan. It is still the most distant landing ever made by a spacecraft.</li>
+        <li>Saturn is the farthest planet that is easy to see from Earth with the naked eye.</li>
+    </ul>
+
     <div id="weight-calculator">
         <h3>Saturn weight calculator</h3>
+        <img src="../image/saturn.png" alt="Saturn" height="300px" width="300px">
         <label for="earthWeight">Enter your weight (kg)</label>
         <input type="number" id="earthWeight">
         <button id="calc-btn">Calculate</button>
@@ -46,7 +56,7 @@
             const earthWeight = parseFloat(document.getElementById('earthWeight').value);
             const planet = document.body.className;
             const result = planetWeight(earthWeight, planet);
-            document.getElementById('result').textContent = result === "Imposible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
+            document.getElementById('result').textContent = result === "Impossible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
         });
     </script>
     <script>

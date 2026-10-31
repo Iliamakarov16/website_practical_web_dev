@@ -33,8 +33,18 @@
     <h2>Human Exploration</h2>
     <p>The Moon is the only celestial body beyond Earth that humans have visited in person, starting with the Apollo 11 mission in 1969. Since then, several missions have studied its surface and composition, and future missions aim to establish a longer-term human presence there.</p>
 
+    <h2>Fun Facts</h2>
+    <ul class="fun-facts">
+        <li>The Moon is slowly drifting away from Earth, by about 3.8 centimeters every year.</li>
+        <li>The Moon always shows the same face to Earth because it spins exactly once for every trip it makes around our planet. This is called tidal locking.</li>
+        <li>Gravity on the Moon is about one sixth of Earth's, so a person who weighs 60 kilograms on Earth would feel like they weigh about 10 kilograms there.</li>
+        <li>Only 12 people have ever walked on the Moon, all during NASA's Apollo missions between 1969 and 1972.</li>
+        <li>With no wind or rain to wipe them away, the footprints left by Apollo astronauts could last for millions of years.</li>
+    </ul>
+
     <div id="weight-calculator">
         <h3>Moon weight calculator</h3>
+        <img src="../image/moon.png" alt="Moon" height="300px" width="300px">
         <label for="earthWeight">Enter your weight (kg)</label>
         <input type="number" id="earthWeight">
         <button id="calc-btn">Calculate</button>
@@ -46,7 +56,7 @@
             const earthWeight = parseFloat(document.getElementById('earthWeight').value);
             const planet = document.body.className;
             const result = planetWeight(earthWeight, planet);
-            document.getElementById('result').textContent = result === "Imposible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
+            document.getElementById('result').textContent = result === "Impossible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
         });
     </script>
     <script>

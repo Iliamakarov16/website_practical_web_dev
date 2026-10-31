@@ -33,8 +33,18 @@
     <h2>Exploration</h2>
     <p>Jupiter has been visited by several spacecraft, including Pioneer, Voyager, Galileo, and Juno, which have studied its atmosphere, magnetic field, and moons in detail. Future missions aim to explore its icy moons for signs of habitability.</p>
 
+    <h2>Fun Facts</h2>
+    <ul class="fun-facts">
+        <li>Jupiter has the shortest day of any planet, spinning once in just under 10 hours.</li>
+        <li>Jupiter's moon Ganymede is the largest moon in the solar system. It is even bigger than the planet Mercury.</li>
+        <li>Jupiter's moon Io is the most volcanically active place in the solar system, with hundreds of active volcanoes.</li>
+        <li>Jupiter has the strongest magnetic field of any planet, nearly 20,000 times stronger than Earth's.</li>
+        <li>The Great Red Spot has been shrinking for more than 100 years. In the late 1800s it was a few times wider than Earth, but today it is only a little wider than our planet.</li>
+    </ul>
+
     <div id="weight-calculator">
         <h3>Jupiter weight calculator</h3>
+        <img src="../image/jupiter.png" alt="Jupiter" height="300px" width="300px">
         <label for="earthWeight">Enter your weight (kg)</label>
         <input type="number" id="earthWeight">
         <button id="calc-btn">Calculate</button>
@@ -46,7 +56,7 @@
             const earthWeight = parseFloat(document.getElementById('earthWeight').value);
             const planet = document.body.className;
             const result = planetWeight(earthWeight, planet);
-            document.getElementById('result').textContent = result === "Imposible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
+            document.getElementById('result').textContent = result === "Impossible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
         });
     </script>
     <script>

@@ -28,13 +28,23 @@
     <p>Uranus has an atmosphere composed mostly of hydrogen and helium, with a small amount of methane that gives it its distinctive blue-green color. Beneath its atmosphere lies a mantle of water, ammonia, and methane ices surrounding a rocky core.</p>
 
     <h2>Moons and Rings</h2>
-    <p>Uranus has 27 known moons, most of which are named after characters from the works of William Shakespeare and Alexander Pope, rather than mythological figures. It also has a faint ring system, discovered in 1977, consisting of narrow, dark rings.</p>
+    <p>Uranus has 29 known moons, most of which are named after characters from the works of William Shakespeare and Alexander Pope, rather than mythological figures. It also has a faint ring system, discovered in 1977, consisting of narrow, dark rings.</p>
 
     <h2>Exploration</h2>
     <p>Uranus has only been visited by one spacecraft, Voyager 2, which flew by in 1986 and provided most of what is currently known about the planet. No dedicated missions have been sent since, though future missions have been proposed to study it in greater detail.</p>
 
+    <h2>Fun Facts</h2>
+    <ul class="fun-facts">
+        <li>Uranus has the coldest atmosphere of any planet in the solar system, with temperatures dropping to about -224 degrees Celsius.</li>
+        <li>William Herschel wanted to name the planet Georgium Sidus, meaning "George's Star", after King George III of Britain.</li>
+        <li>Uranus is the only planet named after a Greek god. All the other planets except Earth are named after Roman gods.</li>
+        <li>The clouds of Uranus contain hydrogen sulfide, the same gas that makes rotten eggs smell bad.</li>
+        <li>Uranus has 13 known rings. The two outermost rings are colored, one blue and one red.</li>
+    </ul>
+
     <div id="weight-calculator">
         <h3>Uranus weight calculator</h3>
+        <img src="../image/uranus.png" alt="Uranus" height="300px" width="300px">
         <label for="earthWeight">Enter your weight (kg)</label>
         <input type="number" id="earthWeight">
         <button id="calc-btn">Calculate</button>
@@ -46,7 +56,7 @@
             const earthWeight = parseFloat(document.getElementById('earthWeight').value);
             const planet = document.body.className;
             const result = planetWeight(earthWeight, planet);
-            document.getElementById('result').textContent = result === "Imposible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
+            document.getElementById('result').textContent = result === "Impossible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
         });
     </script>
     <script>

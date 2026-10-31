@@ -33,8 +33,18 @@
     <h2>Exploration</h2>
     <p>Mars is a major target for space exploration, with numerous rovers and orbiters sent to study its geology, climate, and potential for past or present life. Missions such as Curiosity and Perseverance have searched for signs of ancient water and microbial life, and Mars remains a leading candidate for future human exploration.</p>
 
+    <h2>Fun Facts</h2>
+    <ul class="fun-facts">
+        <li>A day on Mars, called a sol, lasts about 24 hours and 40 minutes, very close to a day on Earth.</li>
+        <li>Sunsets on Mars look blue, because fine dust in the air scatters blue light close to the direction of the Sun.</li>
+        <li>Gravity on Mars is only about 38% of Earth's, so you could jump almost three times higher there.</li>
+        <li>In 2021, NASA's Ingenuity helicopter made the first powered, controlled flight on another planet.</li>
+        <li>Mars is tilted on its axis by about 25 degrees, close to Earth's tilt, so it has seasons too. Each one lasts about twice as long because a Martian year is 687 Earth days.</li>
+    </ul>
+
     <div id="weight-calculator">
         <h3>Mars weight calculator</h3>
+        <img src="../image/mars.png" alt="Mars" height="300px" width="300px">
         <label for="earthWeight">Enter your weight (kg)</label>
         <input type="number" id="earthWeight">
         <button id="calc-btn">Calculate</button>
@@ -46,7 +56,7 @@
             const earthWeight = parseFloat(document.getElementById('earthWeight').value);
             const planet = document.body.className;
             const result = planetWeight(earthWeight, planet);
-            document.getElementById('result').textContent = result === "Imposible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
+            document.getElementById('result').textContent = result === "Impossible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
         });
     </script>
     <script>

@@ -12,7 +12,7 @@ const gravityRatio = {
 };
 
 const planetWeight = function(earthWeight, body){
-    if (earthWeight < 0) return "Imposible to calculate";
+    if (earthWeight < 0) return "Impossible to calculate";
     const ratio = gravityRatio[body.toLowerCase()];
     if (ratio === undefined) throw new Error(`Unknown body: ${body}`);
 

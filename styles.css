@@ -28,7 +28,6 @@ label {
 }
 
 #home-btn-top {
-    font-family: 'Orbitron', sans-serif;
     padding: 3px 3px;
     font-size: 20px;
     margin-top: 30px;
@@ -37,7 +36,6 @@ label {
 
 #home-btn-bottom {
     display: block;
-    font-family: 'Orbitron', sans-serif;
     padding: 3px 3px;
     font-size: 20px;
     margin-left: auto;
@@ -56,10 +54,37 @@ label {
     position: fixed;
     top: 120px;
     right: 150px;
-    font-family: 'Orbitron', sans-serif;
     padding: 3px 3px;
     font-size: 20px;
 }
+
+button {
+    background-color: #ffffff;
+    transition: background-color 0.4s, color 0.4s;
+    border: none;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: var(--accent, #ffffff);
+    color: #ffffff;
+}
+
+#pause-btn:hover {
+    background-color: #dadada;
+    color: #000000;
+}
+/* Planet colors used for button hover */
+body.mercury { --accent: #e2c58e; }
+body.venus   { --accent: #E8CDA5; }
+body.earth   { --accent: #2f8bc1; }
+body.moon    { --accent: #B8B8B8; }
+body.mars    { --accent: #C1440E; }
+body.jupiter { --accent: #D9A26C; }
+body.saturn  { --accent: #e3cfa0; }
+body.uranus  { --accent: #AFDBF5; }
+body.neptune { --accent: #3E54E8; }
+body.sun     { --accent: #FDB813; }
 
 img {
     display: block;
@@ -88,16 +113,16 @@ a {
 }
 
 /* Per-planet text colors */
-body.sun h1, body.sun h2, body.sun h3, body.sun p, body.sun label { color: #FDB813; }
-body.mercury h1, body.mercury h2, body.mercury h3, body.mercury p, body.mercury label { color: #e2c58e; }
-body.venus h1, body.venus h2, body.venus h3, body.venus p, body.venus label { color: #E8CDA5; }
-body.earth h1, body.earth h2, body.earth h3, body.earth p, body.earth label { color: #2f8bc1; }
-body.moon h1, body.moon h2, body.moon h3, body.moon p, body.moon label { color: #B8B8B8; }
-body.mars h1, body.mars h2, body.mars h3, body.mars p, body.mars label { color: #C1440E; }
-body.jupiter h1, body.jupiter h2, body.jupiter h3, body.jupiter p, body.jupiter label { color: #D9A26C; }
-body.saturn h1, body.saturn h2, body.saturn h3, body.saturn p, body.saturn label { color: #e3cfa0; }
-body.uranus h1, body.uranus h2, body.uranus h3, body.uranus p, body.uranus label { color: #AFDBF5; }
-body.neptune h1, body.neptune h2, body.neptune h3, body.neptune p, body.neptune label { color: #3E54E8; }
+body.sun h1, body.sun h2, body.sun h3, body.sun p, body.sun label, body.sun ul, body.sun{ color: #FDB813; }
+body.mercury h1, body.mercury h2, body.mercury h3, body.mercury p, body.mercury label, body.mercury ul, body.mercury{ color: #e2c58e; }
+body.venus h1, body.venus h2, body.venus h3, body.venus p, body.venus label, body.venus ul, body.venus{ color: #E8CDA5; }
+body.earth h1, body.earth h2, body.earth h3, body.earth p, body.earth label, body.earth ul, body.earth{ color: #2f8bc1; }
+body.moon h1, body.moon h2, body.moon h3, body.moon p, body.moon label, body.moon ul, body.moon{ color: #B8B8B8; }
+body.mars h1, body.mars h2, body.mars h3, body.mars p, body.mars label, body.mars ul, body.mars{ color: #C1440E; }
+body.jupiter h1, body.jupiter h2, body.jupiter h3, body.jupiter p, body.jupiter label, body.jupiter ul, body.jupiter{ color: #D9A26C; }
+body.saturn h1, body.saturn h2, body.saturn h3, body.saturn p, body.saturn label, body.saturn ul, body.saturn{ color: #e3cfa0; }
+body.uranus h1, body.uranus h2, body.uranus h3, body.uranus p, body.uranus label, body.uranus ul, body.uranus{ color: #AFDBF5; }
+body.neptune h1, body.neptune h2, body.neptune h3, body.neptune p, body.neptune label, body.neptune ul, body.neptune{ color: #3E54E8; }
 
 /*fade in animation for planet body*/
 body.sun > *, body.mercury > *, body.venus > *, body.earth > *,
@@ -338,4 +363,23 @@ img.index-planet{
 
 .neptune-orbit img.index-planet:hover {
     transform: translate(-50%, -50%) translate(-15px, -15px) scale(1.7);
+}
+
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+ul.fun-facts {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.05em;
+    text-align: center;
+    list-style-position: inside;
+    padding: 0 1rem;
+    max-width: 900px;
+    margin: 0 auto 1.5rem;
+}
+
+ul.fun-facts li {
+    margin-bottom: 0.8rem;
 }

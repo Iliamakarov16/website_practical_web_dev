@@ -33,8 +33,18 @@
     <h2>The Future of the Sun</h2>
     <p>Scientists estimate the Sun is roughly halfway through its life cycle. In about 5 billion years, it is expected to exhaust the hydrogen fuel in its core and expand into a red giant, eventually shedding its outer layers and leaving behind a dense core known as a white dwarf.</p>
 
+    <h2>Fun Facts</h2>
+    <ul class="fun-facts">
+        <li>Sunlight takes about 8 minutes and 20 seconds to reach Earth, so we always see the Sun as it was a few minutes ago.</li>
+        <li>The Sun's outer atmosphere, the corona, is millions of degrees Celsius, far hotter than its surface at about 5,500 degrees Celsius. Scientists are still working out why.</li>
+        <li>Every second, the Sun turns about 4 million tonnes of matter into energy.</li>
+        <li>About 1.3 million Earths could fit inside the Sun.</li>
+        <li>The Sun is also travelling around the center of the Milky Way, and it takes about 230 million years to complete one orbit.</li>
+    </ul>
+
     <div id="weight-calculator">
         <h3>Sun weight calculator</h3>
+        <img src="../image/sun.png" alt="Sun" height="300px" width="300px">
         <label for="earthWeight">Enter your weight (kg)</label>
         <input type="number" id="earthWeight">
         <button id="calc-btn">Calculate</button>
@@ -46,7 +56,7 @@
             const earthWeight = parseFloat(document.getElementById('earthWeight').value);
             const planet = document.body.className;
             const result = planetWeight(earthWeight, planet);
-            document.getElementById('result').textContent = result === "Imposible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
+            document.getElementById('result').textContent = result === "Impossible to calculate" ? result : `You would weigh ${result.toFixed(2)} kg / ${(result * 2.205).toFixed(2)} lbs on ${planet}`;
         });
     </script>
     <script>
