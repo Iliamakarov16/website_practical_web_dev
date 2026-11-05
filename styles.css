@@ -174,9 +174,7 @@ img.sun{
     transform: translate(-50%, -50%);
     transition: 0.2s ease;
 }
-img.sun:hover{
-    transform: translate(-50%, -50%) scale(1.3);
-}
+
 /* Each orbit is a circle */
 .orbit {
     position: absolute;
@@ -291,13 +289,12 @@ img.index-planet{
 
     animation: orbit 50s linear infinite;
 }
-/* Per-planet nudges: tune the px offset while watching in the browser
-   so the visible planet (not just the img box) sits on the ring. */
-.mercury-orbit img.index-planet {
+
+img.index-planet {
     transform: translate(-50%, -50%) translate(-15px, -15px);
 }
 
-.mercury-orbit img.index-planet:hover {
+.orbit img.index-planet:hover {
     transform: translate(-50%, -50%) translate(-15px, -15px) scale(1.7);
 }
 
@@ -305,66 +302,9 @@ img.index-planet{
     transform: translate(-50%, -50%) translate(-10px, -10px);
 }
 
-.venus-orbit img.index-planet:hover {
-    transform: translate(-50%, -50%) translate(-10px, -10px) scale(1.7);
+img.sun:hover{
+    transform: translate(-50%, -50%) scale(1.3);
 }
-
-.earth-orbit img.index-planet {
-    transform: translate(-50%, -50%) translate(-15px, -15px);
-}
-
-.earth-orbit img.index-planet:hover {
-    transform: translate(-50%, -50%) translate(-15px, -15px) scale(1.7);
-}
-
-.moon-orbit img.index-planet {
-    transform: translate(-50%, -50%) translate(-15px, -15px);
-}
-
-.moon-orbit img.index-planet:hover {
-    transform: translate(-50%, -50%) translate(-15px, -15px) scale(1.7);
-}
-
-.mars-orbit img.index-planet {
-    transform: translate(-50%, -50%) translate(-15px, -15px);
-}
-
-.mars-orbit img.index-planet:hover {
-    transform: translate(-50%, -50%) translate(-15px, -15px) scale(1.7);
-}
-
-.jupiter-orbit img.index-planet {
-    transform: translate(-50%, -50%) translate(-15px, -15px);
-}
-
-.jupiter-orbit img.index-planet:hover {
-    transform: translate(-50%, -50%) translate(-15px, -15px) scale(1.7);
-}
-
-.saturn-orbit img.index-planet {
-    transform: translate(-50%, -50%) translate(-15px, -15px);
-}
-
-.saturn-orbit img.index-planet:hover {
-    transform: translate(-50%, -50%) translate(-15px, -15px) scale(1.7);
-}
-
-.uranus-orbit img.index-planet {
-    transform: translate(-50%, -50%) translate(-15px, -15px);
-}
-
-.uranus-orbit img.index-planet:hover {
-    transform: translate(-50%, -50%) translate(-15px, -15px) scale(1.7);
-}
-
-.neptune-orbit img.index-planet {
-    transform: translate(-50%, -50%) translate(-15px, -15px);
-}
-
-.neptune-orbit img.index-planet:hover {
-    transform: translate(-50%, -50%) translate(-15px, -15px) scale(1.7);
-}
-
 
 body.no-scroll {
     overflow: hidden;
