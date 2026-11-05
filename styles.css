@@ -323,3 +323,19 @@ ul.fun-facts {
 ul.fun-facts li {
     margin-bottom: 0.8rem;
 }
+
+/* Navigation between planet pages */
+nav.planet-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 1rem;
+    margin: 20px auto 0;
+    max-width: 900px;
+}
+
+nav.planet-nav button {
+    padding: 3px 3px;
+    font-size: 20px;
+}
